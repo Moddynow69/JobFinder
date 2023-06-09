@@ -26,7 +26,6 @@ const Popularjobs = () => {
     router.push(`/job-details/${item.job_id}`);
     setSelectedJob(item.job_id);
   };
-
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -35,7 +34,6 @@ const Popularjobs = () => {
           <Text style={styles.headerBtn}>Show all</Text>
         </TouchableOpacity>
       </View>
-
       <View style={styles.cardsContainer}>
         {isLoading ? (
           <ActivityIndicator size='large' color={COLORS.primary} />

@@ -9,7 +9,7 @@ const Company = ({ companyLogo, jobTitle, companyName, location }) => {
   return (
     <View style={styles.container}>
       <View style={styles.logoBox}>
-        <Image
+        <Image resizeMode='contain'
           source={{
             uri: checkImageURL(companyLogo)
               ? companyLogo
