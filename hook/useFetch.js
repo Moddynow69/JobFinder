@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import datafile from './datafile.json'
 
 const useFetch = (endpoint, query) => {
     const [data, setData] = useState([]);
@@ -19,8 +19,15 @@ const useFetch = (endpoint, query) => {
     const fetchData = async () => {
         setIsLoading(true);
         try {
-            const response = await axios.request(options);
-            setData(response.data.data);
+
+    //API
+            // const response = await axios.request(options);
+            // setData(response.data.data);
+    //JSON
+            const response = datafile;
+            setData(response.data);
+
+            
             setIsLoading(false);
         } catch (error) {
             setError(error);

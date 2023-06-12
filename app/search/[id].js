@@ -3,6 +3,7 @@ import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'reac
 import { Stack, useRouter, useSearchParams } from 'expo-router'
 import { Text, SafeAreaView } from 'react-native'
 import axios from 'axios'
+import datafile from '../../hook/datafile.json'
 
 import { ScreenHeaderBtn, NearbyJobCard } from '../../components'
 import { COLORS, icons, SIZES } from '../../constants'
@@ -35,8 +36,13 @@ const JobSearch = () => {
                 },
             };
 
-            const response = await axios.request(options);
-            setSearchResult(response.data.data);
+            //API
+                    // const response = await axios.request(options);
+                    // setSearchResult(response.data.data);
+
+            //JSON
+                    const response = datafile;
+                    setSearchResult(response.data);
         } catch (error) {
             setSearchError(error);
             console.log(error);
