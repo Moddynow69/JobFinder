@@ -1,17 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import datafile from './datafile.json'
-
 const useFetch = (endpoint, query) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
-
     const options = {
         method: 'GET',
         url: `https://jsearch.p.rapidapi.com/${endpoint}`,
         headers: {
-            'X-RapidAPI-Key': 'd1aecf52femsh57c53faa8c4a3a8p16e87ejsn14c06f921cac',
+            'X-RapidAPI-Key': `${process.env.RAPID_API_KEY}`,
             'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
         },
         params: { ...query },
@@ -23,10 +21,9 @@ const useFetch = (endpoint, query) => {
     //API
             // const response = await axios.request(options);
             // setData(response.data.data);
-    //JSON
+            //JSON
             const response = datafile;
             setData(response.data);
-
             
             setIsLoading(false);
         } catch (error) {
