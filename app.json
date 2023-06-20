@@ -4,7 +4,7 @@
     "web": {
       "bundler": "metro"
     },
-    "name": "ClassSync",
-    "slug": "ClassSync"
+    "name": "JobFinder",
+    "slug": "JobFinder"
   }
 }
